@@ -1,0 +1,24 @@
+From a248b1eedb9de154751faf9760f15edca141c353 Mon Sep 17 00:00:00 2001
+From: Shourai <10200748+Shourai@users.noreply.github.com>
+Date: Tue, 8 Nov 2022 19:49:03 +0100
+Subject: Apply clipboard on st version 0.9
+
+---
+ x.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/x.c b/x.c
+index db17dcf..c7ef7fc 100644
+--- a/x.c
++++ b/x.c
+@@ -691,6 +691,7 @@ setsel(char *str, Time t)
+ 	XSetSelectionOwner(xw.dpy, XA_PRIMARY, xw.win, t);
+ 	if (XGetSelectionOwner(xw.dpy, XA_PRIMARY) != xw.win)
+ 		selclear();
++	clipcopy(NULL);
+ }
+ 
+ void
+-- 
+2.38.1
+
